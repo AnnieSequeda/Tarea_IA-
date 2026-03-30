@@ -6,7 +6,8 @@ from sklearn.linear_model import Lasso, Ridge
 def generar_caso_de_uso_preparar_datos():
     """
     Genera un caso de uso aleatorio para una funcion con firma equivalente a:
-    preparar_datos(df, target_col, alpha)
+    preparar_datos(df, target_col, alpha)   
+
 
     Basado en el enunciado adjunto, el output esperado se calcula como:
     abs(coeficientes_lasso - coeficientes_ridge)

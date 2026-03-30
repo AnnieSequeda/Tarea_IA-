@@ -1,0 +1,25 @@
+# El Problema: Evaluación de la Estabilidad de Importancia de Características
+
+En modelos basados en árboles, como los Bosques Aleatorios (Random Forest), la importancia de las variables puede variar ligeramente según la semilla de aleatoriedad usada durante el entrenamiento.
+
+Un modelo robusto debería mostrar una importancia de características consistente.
+
+El problema consiste en medir qué tan inestables son las importancias de las variables al entrenar el mismo modelo múltiples veces con diferentes estados aleatorios.
+
+## Tu Misión
+
+Desarrolla una función que entrene varias instancias de un modelo de regresión y calcule la desviación estándar de las importancias reportadas para cada variable.
+
+## Nombre de la función
+
+`calcular_estabilidad_importancia(df, target_col, n_iteraciones)`
+
+## Argumentos
+
+- `df` (`pandas.DataFrame`): DataFrame con variables predictoras numéricas y una variable objetivo.
+- `target_col` (`str`): Nombre de la columna objetivo ($y$).
+- `n_iteraciones` (`int`): Número de veces que se entrenará el modelo para medir la variabilidad.
+
+## Retorno esperado
+
+- `numpy.ndarray`: Arreglo con la desviación estándar de la importancia (`feature_importances_`) de cada variable predictora, calculada a lo largo de todas las iteraciones.

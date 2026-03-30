@@ -1,0 +1,22 @@
+# El Problema: Optimización del Umbral de Decisión en Clasificación
+
+Por defecto, la mayoría de los algoritmos de clasificación binaria utilizan un umbral de `0.5` para decidir si una observación pertenece a la clase positiva o negativa. Sin embargo, en problemas del mundo real (como detección de fraudes o diagnósticos médicos), este umbral rara vez es el óptimo.
+
+El problema consiste en evaluar dinámicamente cómo cambia el rendimiento de un modelo (medido con F1-Score) al variar el umbral de decisión, usando probabilidades en lugar de predicciones absolutas.
+
+## Tu Misión
+
+Desarrolla una función que entrene un modelo de clasificación, extraiga las probabilidades de pertenecer a la clase positiva (`1`) y calcule el F1-Score para una serie de umbrales específicos.
+
+## Nombre de la función
+
+`evaluar_umbrales_decision(df, target_col)`
+
+## Argumentos
+
+- `df` (`pandas.DataFrame`): DataFrame con variables predictoras numéricas y variable objetivo binaria (`0` y `1`).
+- `target_col` (`str`): Nombre de la columna objetivo.
+
+## Retorno esperado
+
+- `numpy.ndarray`: Arreglo con exactamente 9 valores numéricos, correspondientes al F1-Score obtenido para cada umbral evaluado.
