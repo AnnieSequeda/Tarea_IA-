@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 
 
-def generar_caso_de_uso_preparar_datos():
+def generar_caso_de_uso_Arboles():
     """
     Genera un caso de uso aleatorio para una funcion con firma equivalente a:
     calcular_estabilidad_importancia(df, target_col, n_iteraciones)
