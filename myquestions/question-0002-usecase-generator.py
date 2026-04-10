@@ -4,7 +4,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score
 
 
-def generar_caso_de_datos():
+def generar_caso_de_uso_Optimizacion():
     """
     Genera un caso de uso aleatorio para la función evaluar_umbrales_decision.
     
