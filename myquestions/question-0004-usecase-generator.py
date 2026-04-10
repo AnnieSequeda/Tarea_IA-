@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
 
-def generar_caso_de_uso_preparar_datos():
+def generar_caso_de_uso_rendimientos():
     """
     Genera un caso de uso aleatorio para una funcion con firma equivalente a:
     medir_rendimiento_incremental(df, target_col)
