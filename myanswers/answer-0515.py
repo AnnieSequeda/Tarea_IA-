@@ -14,6 +14,7 @@ def pipeline_pca_ridge(
     alpha: float = 1.0
 ) -> dict:
 
+
     imputer = SimpleImputer(strategy='mean')
 
     X_train_imp = imputer.fit_transform(X_train)
@@ -35,12 +36,20 @@ def pipeline_pca_ridge(
 
     predicciones = model.predict(X_test_pca)
 
-    rmse = np.sqrt(mean_squared_error(y_test, predicciones))
-    r2 = r2_score(y_test, predicciones)
+
+    rmse = float(
+        np.sqrt(
+            mean_squared_error(y_test, predicciones)
+        )
+    )
+
+    r2 = float(
+        r2_score(y_test, predicciones)
+    )
 
     return {
         "n_componentes": int(pca.n_components_),
-        "rmse": float(rmse),
-        "r2": float(r2),
+        "rmse": rmse,
+        "r2": r2,
         "predicciones": predicciones
     }
