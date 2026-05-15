@@ -1,17 +1,17 @@
 import pandas as pd
 
 
-def detectar_ocupacion_fantasma(
-    sensor_data,
-    pagos_activos
-):
+def detectar_ocupacion_fantasma(**kwargs):
+
+    sensor_data = kwargs["sensor_data"]
+    pagos_activos = kwargs["pagos_activos"]
 
     ocupadas = sensor_data[
-        sensor_data['estado_sensor'] == 1
-    ]['celda_id']
+        sensor_data["estado_sensor"] == 1
+    ]["celda_id"]
 
     pagadas = set(
-        pagos_activos['celda_id']
+        pagos_activos["celda_id"]
     )
 
     fantasmas = sorted([
