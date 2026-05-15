@@ -1,10 +1,7 @@
 import pandas as pd
 
 
-def detectar_ocupacion_fantasma(sensor_data=None):
-
-    if sensor_data is None:
-        return None
+def detectar_ocupacion_fantasma(sensor_data):
 
     df_sensores = sensor_data['sensor_data']
     df_pagos = sensor_data['pagos_activos']
