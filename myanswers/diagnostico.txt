@@ -1,0 +1,17 @@
+Ejercicio 0515
+
+La implementación realizada para la función `pipeline_pca_ridge` sigue la misma lógica y estructura descrita en el generador de casos de uso. En la solución se aplican las etapas de imputación de datos faltantes mediante `SimpleImputer`, escalado con `StandardScaler`, reducción de dimensionalidad con `PCA(n_components=0.95)` y entrenamiento del modelo `Ridge`, tal como se observa en el generador de referencia.
+
+Sin embargo, durante la validación automática se presentó un error relacionado con la invocación de la función y no con la lógica matemática o estadística del pipeline. El mensaje reportado por el evaluador fue:
+
+`pipeline_pca_ridge() missing 4 required positional arguments: 'X_train', 'y_train', 'X_test', and 'y_test'`
+
+Esto indica que el evaluador o el generador de casos de uso intentó ejecutar la función sin suministrar los argumentos requeridos, a pesar de que en el generador dichos argumentos sí son definidos y enviados posteriormente mediante el diccionario `input_args`.
+
+En el generador de casos de uso, específicamente en la sección donde se construye:
+
+`input_args = { "X_train": X_train, "y_train": y_train, "X_test": X_test, "y_test": y_test, "alpha": alpha_val }`
+
+se evidencia que la función está diseñada para recibir esos parámetros explícitamente.
+
+Por esta razón, considero que el error corresponde a una inconsistencia en la forma en que el evaluador invoca inicialmente la función y no a un problema de implementación del pipeline solicitado.
