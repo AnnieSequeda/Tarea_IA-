@@ -1,16 +1,18 @@
 import pandas as pd
 
 
-def detectar_ocupacion_fantasma(sensor_data):
+def detectar_ocupacion_fantasma(
+    sensor_data,
+    pagos_activos
+):
 
-    df_sensores = sensor_data['sensor_data']
-    df_pagos = sensor_data['pagos_activos']
-
-    ocupadas = df_sensores[
-        df_sensores['estado_sensor'] == 1
+    ocupadas = sensor_data[
+        sensor_data['estado_sensor'] == 1
     ]['celda_id']
 
-    pagadas = set(df_pagos['celda_id'])
+    pagadas = set(
+        pagos_activos['celda_id']
+    )
 
     fantasmas = sorted([
         celda for celda in ocupadas
